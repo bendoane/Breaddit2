@@ -1,0 +1,15 @@
+<h4>Welcome to</h4>
+<h1>Breaddit</h1>
+<br>
+
+  <%= @links.each do |x|%>
+    <%= link.title %>
+    <%= link.link %>
+    <%= link.summary %>
+  <%end%>
+
+
+
+
+
+<h3><%= button_to "Contribute", links_path %></h3>

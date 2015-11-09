@@ -1,0 +1,35 @@
+<%= form_for(@links) do |x| %>
+  <% if @links.errors.any? %>
+    <div id="Error_message">
+      <h2><%= pluralize(@link.errors.count, "error") %>There was a problem with your dough. Check your recipe and try again.</h2>
+
+      <ul>
+      <% @article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <%end%>
+
+  <div class="field">
+    <%= x.label :"Title"%><br>
+    <%= x.text_field :title%>
+  </div>
+  <br>
+  <div class="field">
+    <%= x.label :"Breadcrumb trail"%><br>
+    <%= x.text_field :link%>
+  </div>
+  <br>
+  <div class="field">
+    <%= x.label :"Brief Description"%><br>
+    <%= x.text_field :summary%>
+  </div>
+  <br>
+  <div class="actions">
+    <%= x.submit %>
+  </div>
+  <br>
+
+
+<%end%>
