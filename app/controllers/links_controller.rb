@@ -11,7 +11,7 @@ end
 
 def update
   @links = Link.find(params[:id])
-  if @link.update(link_params)
+  if @links.update(link_params)
     redirect_to root_url
   else
     render "create"
