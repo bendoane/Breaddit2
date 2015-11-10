@@ -1,28 +1,38 @@
 require 'test_helper'
 
 class UserControllerTest < ActionController::TestCase
-  test "should get username:string" do
-    get :username:string
+  test "should get index" do
+    get :index
     assert_response :success
   end
 
-  test "should get email:string" do
-    get :email:string
+  test "should get new" do
+    get :new
     assert_response :success
   end
 
-  test "should get crypted_password:string" do
-    get :crypted_password:string
+  test "should get create" do
+    get :create
     assert_response :success
   end
 
-  test "should get password_salt:string" do
-    get :password_salt:string
+  test "should get update" do
+    get :update
     assert_response :success
   end
 
-  test "should get persistence_token:string" do
-    get :persistence_token:string
+  test "should get edit" do
+    get :edit
+    assert_response :success
+  end
+
+  test "should get destroy" do
+    get :destroy
+    assert_response :success
+  end
+
+  test "should get show" do
+    get :show
     assert_response :success
   end
 
