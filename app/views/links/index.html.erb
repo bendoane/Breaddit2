@@ -2,10 +2,17 @@
 <h1>Breaddit</h1>
 <br>
 
-  <%= @links.each do |x|%>
+  <% @links.each do |x|%>
+    <%= link_to "+1", upvote_path(x) %>
+    <%= x.votes.count %>
+      <% if x.votes.count > 0 %>
+      <%= link_to "-1", downvote_path(x) %>
+      <% else%>
+      <%end%>
     <%= x.title %>
     <%= x.link %>
     <%= x.summary %>
+    <br>
   <%end%>
 
 

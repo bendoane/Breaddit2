@@ -1,5 +1,23 @@
 Rails.application.routes.draw do
+  get 'user/username:string'
+
+  get 'user/email:string'
+
+  get 'user/crypted_password:string'
+
+  get 'user/password_salt:string'
+
+  get 'user/persistence_token:string'
+
+  get '/votes/:id' => 'votes#upvote', :as => :upvote
+  get '/downvotes/:id' => 'votes#downvote', :as => :downvote
+  resources :votes
   resources :links
+
+  resources :user_sessions, :only => [:new, :create, :destroy]
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -7,7 +25,7 @@ Rails.application.routes.draw do
    root 'links#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
