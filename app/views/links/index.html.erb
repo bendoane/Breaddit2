@@ -10,13 +10,10 @@
       <% else%>
       <%end%>
     <%= x.title %>
-    <%= x.link %>
+    <a href= "<%= x.link %>"><%=x.link%></a>
     <%= x.summary %>
+    <%= link_to "trash", x, method: :delete  %>
     <br>
   <%end%>
 
-
-
-
-
-<h3><%= button_to "Contribute", links_path %></h3>
+<h3><%= button_to "Contribute", new_link_path, :method => :get %></h3>
